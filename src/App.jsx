@@ -4,7 +4,6 @@ import {
     useEditionDrop,
     useToken,
     useVote,
-    useNetwork,
 } from "@thirdweb-dev/react";
 import { useState, useEffect, useMemo, React } from "react";
 import { AddressZero } from "@ethersproject/constants";

@@ -2,6 +2,7 @@
   "name": "mydao",
   "version": "2.0.0",
   "private": true,
+  "homepage" : "https://habeebullahtabrez.github.io/DeathNote-DAO/",
   "dependencies": {
     "@craco/craco": "^7.0.0-alpha.3",
     "@thirdweb-dev/react": "^2.0.3",

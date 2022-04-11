@@ -1,0 +1,38 @@
+.header {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #003fee;
+    font-weight: bold;
+}
+
+.header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+}
+
+.header li {
+    margin-left: 3rem;
+}
+
+.header li {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #275be9;
+}
+
+.header li:hover,
+.header li:active,
+.header li.active {
+    color: rgb(190, 211, 255);
+}

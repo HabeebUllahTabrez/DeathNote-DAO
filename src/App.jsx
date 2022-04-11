@@ -8,6 +8,7 @@ import {
     useToken,
     useVote,
 } from "@thirdweb-dev/react";
+import Header from "./components/Header";
 
 const App = () => {
     // Use the hooks thirdweb give us.
@@ -247,7 +248,7 @@ const App = () => {
     if (hasClaimedNFT) {
         return (
             <div className="member-page">
-                <h1>📓DeathNote DAO</h1>
+                <Header user={shortenAddress(address)} />
                 <p>Congratulations on being a member</p>
                 <div>
                     <div>

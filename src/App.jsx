@@ -1,20 +1,18 @@
 import { useState, useEffect, useMemo, React } from "react";
 
 import { AddressZero } from "@ethersproject/constants";
-import { ChainId } from "@thirdweb-dev/sdk";
 import {
     useAddress,
     useMetamask,
     useEditionDrop,
     useToken,
     useVote,
-    useNetwork,
 } from "@thirdweb-dev/react";
 
 const App = () => {
     // Use the hooks thirdweb give us.
     const address = useAddress();
-    const network = useNetwork();
+
     const connectWithMetamask = useMetamask();
 
     console.log("👋 Address:", address);
@@ -44,6 +42,9 @@ const App = () => {
     const [proposals, setProposals] = useState([]);
     const [isVoting, setIsVoting] = useState(false);
     const [hasVoted, setHasVoted] = useState(false);
+
+    const network = window.ethereum.networkVersion;
+    const [currNetwork, setNetwork] = useState(window.ethereum.networkVersion);
 
     // Retrieve all our existing proposals from the contract.
     useEffect(() => {
@@ -176,6 +177,29 @@ const App = () => {
         checkBalance();
     }, [address, editionDrop]);
 
+    // useffect to get the network
+    useEffect(() => {
+        // If they don't have an connected wallet, exit!
+        if (!address) {
+            return;
+        }
+
+        const checkNetwork = async () => {
+            try {
+                if (network !== currNetwork) {
+                    setNetwork(network);
+                    console.log("Network changed to: " + network);
+                } else {
+                    setNetwork(network);
+                }
+            } catch (error) {
+                console.error("Failed to get Network", error);
+            }
+        };
+
+        checkNetwork();
+    }, [address, network, currNetwork]);
+
     const mintNft = async () => {
         try {
             setIsClaiming(true);
@@ -193,7 +217,7 @@ const App = () => {
         }
     };
 
-    if (network?.[0].data.chain.id !== ChainId.Rinkeby) {
+    if (currNetwork !== "4") {
         return (
             <div className="unsupported-network">
                 <h2>Please connect to Rinkeby</h2>
@@ -223,7 +247,7 @@ const App = () => {
     if (hasClaimedNFT) {
         return (
             <div className="member-page">
-                <h1>📓DeathNote DAO Member Page</h1>
+                <h1>📓DeathNote DAO</h1>
                 <p>Congratulations on being a member</p>
                 <div>
                     <div>

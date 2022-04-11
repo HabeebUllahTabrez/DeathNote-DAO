@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/DeathNote-DAO/static/css/main.f7c2c749.css",
-    "main.js": "/DeathNote-DAO/static/js/main.fc7dc1ab.js",
+    "main.css": "/DeathNote-DAO/static/css/main.da508d67.css",
+    "main.js": "/DeathNote-DAO/static/js/main.61092e39.js",
     "index.html": "/DeathNote-DAO/index.html",
-    "main.f7c2c749.css.map": "/DeathNote-DAO/static/css/main.f7c2c749.css.map",
-    "main.fc7dc1ab.js.map": "/DeathNote-DAO/static/js/main.fc7dc1ab.js.map"
+    "main.da508d67.css.map": "/DeathNote-DAO/static/css/main.da508d67.css.map",
+    "main.61092e39.js.map": "/DeathNote-DAO/static/js/main.61092e39.js.map"
   },
   "entrypoints": [
-    "static/css/main.f7c2c749.css",
-    "static/js/main.fc7dc1ab.js"
+    "static/css/main.da508d67.css",
+    "static/js/main.61092e39.js"
   ]
 }
